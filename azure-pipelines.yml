@@ -13,11 +13,13 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+steps:
 - task: DotNetCoreCLI@2
+  displayName: Build
   inputs:
-    command: 'restore'
-    feedsToUse: 'select'
-    vstsFeed: 'my-vsts-feed' # A series of numbers and letters
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)' # Update this to match your need
 
 - task: DotNetCoreCLI@2
   inputs:
