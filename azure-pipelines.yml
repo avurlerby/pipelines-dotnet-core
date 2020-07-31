@@ -25,10 +25,6 @@ steps:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
   displayName: 'dotnet build $(buildConfiguration)'
-
-steps:
-# ...
-# do this after other tasks such as building
 - task: DotNetCoreCLI@2
   inputs:
     command: test
